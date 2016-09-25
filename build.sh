@@ -1,0 +1,1 @@
+dnf install pungi && pungi --nosource --nodebuginfo -G -C -B --flavor Amahi --name Amahi --ver 10 -c amahi.ks --isfinal && pungi --nosource --nodebuginfo -I --flavor Amahi --name Amahi --ver 10 -c amahi.ks --isfinal
