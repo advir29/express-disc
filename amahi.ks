@@ -12,7 +12,7 @@
 # Add the repos you wish to use to compose here.  At least one of them needs group data.
 
 # Only uncomment repo commands in one of the two following sections.
-# Because the install kickstart doesn't use the updates repo and does 
+# Because the install kickstart doesn't use the updates repo and does
 # use the source repo, we can't just include fedora-repo.ks
 
 # In the master branch the rawhide repo commands should be uncommented.
@@ -22,7 +22,7 @@
 # In non-master branches the fedora repo commands should be uncommented
 repo --name=fedora --baseurl=http://mirrors.mit.edu/fedora/linux/releases/24/Everything/x86_64/os/ --excludepkgs=fedora-productimg-cloud,fedora-productimg-workstation
 repo --name=fedora-updates --baseurl=http://mirrors.mit.edu/fedora/linux/updates/24/x86_64/
-repo --name=amahi --baseurl=http://f24.amahi.org/
+repo --name=amahi --baseurl=http://f24.amahi.org/ --nogpgkey
 
 # Package manifest for the compose.  Uses repo group metadata to translate groups.
 # (default groups for the configured repos are added by --default)
@@ -33,7 +33,7 @@ repo --name=amahi --baseurl=http://f24.amahi.org/
 fedora-productimg-server
 -fedora-productimg-workstation
 
-# pungi is an inclusive depsolver so that multiple packages are brought 
+# pungi is an inclusive depsolver so that multiple packages are brought
 # in to satisify dependencies and we don't always want that. So we  use
 # an exclusion list to cut out things we don't want
 
